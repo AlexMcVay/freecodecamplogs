@@ -1,0 +1,46 @@
+** start of undefined **
+
+<style scr='./styles.css'></style>
+<form id="input-form">
+    <label for="text-input">text</label>
+    <input id="text-input" type="text">
+    <button type="button" id="check-btn">Check</button>
+</form>
+<div id="result"></div>
+<script>
+  document.getElementById('check-btn').addEventListener('click', function() {
+    var input = document.getElementById('text-input').value;
+    if (input === '') {
+      alert('Please input a value');
+    } else {
+      var result = document.getElementById('result');
+      var isPalindrome = input.replace(/[^a-zA-Z0-9]/g, '').toLowerCase() === input.replace(/[^a-zA-Z0-9]/g, '').toLowerCase().split('').reverse().join('');
+      result.textContent = input + ' is ' + (isPalindrome ? 'a palindrome' : 'not a palindrome');
+    }
+  });
+</script>
+
+
+** end of undefined **
+
+** start of undefined **
+
+
+
+** end of undefined **
+
+** start of undefined **
+
+document.getElementById('check-btn').addEventListener('click', function() {
+    var input = document.getElementById('text-input').value;
+    if (input === '') {
+      alert('Please input a value');
+    } else {
+      var result = document.getElementById('result');
+      var isPalindrome = input.replace(/[^a-zA-Z0-9]/g, '').toLowerCase() === input.replace(/[^a-zA-Z0-9]/g, '').toLowerCase().split('').reverse().join('');
+      result.textContent = input + ' is ' + (isPalindrome ? 'a palindrome' : 'not a palindrome');
+    }
+  });
+
+** end of undefined **
+
