@@ -1,0 +1,122 @@
+** start of undefined **
+
+<input id="number" type="number">
+<button id="convert-btn">Convert</button>
+<div id="output"></div>
+<script>
+  const numberInput = document.getElementById("number");
+  const convertButton = document.getElementById("convert-btn");
+  const outputElement = document.getElementById("output");
+
+  function convertToRoman(num) {
+    const val = [
+      1000, 900, 500, 400,
+      100, 90, 50, 40,
+      10, 9, 5, 4,
+      1
+    ];
+    const syb = [
+      "M", "CM", "D", "CD",
+      "C", "XC", "L", "XL",
+      "X", "IX", "V", "IV",
+      "I"
+    ];
+    let roman = '';
+    for (let i = 0; i < val.length; i++) {
+      while (num >= val[i]) {
+        num -= val[i];
+        roman += syb[i];
+      }
+    }
+    return roman;
+  }
+
+  convertButton.addEventListener("click", function() {
+    const number = numberInput.value;
+    if (!number) {
+      outputElement.textContent = "Please enter a valid number";
+    } else {
+      const num = Number(number);
+      if (num < 1) {
+        outputElement.textContent = "Please enter a number greater than or equal to 1";
+      } else if (num > 3999) {
+        outputElement.textContent = "Please enter a number less than or equal to 3999";
+      } else {
+        outputElement.textContent = convertToRoman(num);
+      }
+    }
+  });
+</script>
+
+
+** end of undefined **
+
+** start of undefined **
+
+    const numberInput = document.createElement('input');
+numberInput.id = "number";
+document.body.appendChild(numberInput);
+
+const convertBtn = document.createElement('button');
+convertBtn.id = "convert-btn";
+convertBtn.textContent = "Convert to Roman";
+document.body.appendChild(convertBtn);
+
+const outputDiv = document.createElement('div');
+outputDiv.id = "output";
+document.body.appendChild(outputDiv);
+
+convertBtn.addEventListener('click', () => {
+  const num = Number(numberInput.value);
+  if (isNaN(num) || !numberInput.value) {
+    outputDiv.textContent = "Please enter a valid number";
+  } else if (num < 1) {
+    outputDiv.textContent = "Please enter a number greater than or equal to 1";
+  } else if (num > 3999) {
+    outputDiv.textContent = "Please enter a number less than or equal to 3999";
+  } else  {
+    outputDiv.textContent = toRoman(num);
+  }
+  function convertToRoman(num) {
+    const val = [
+        1000, 900, 500, 400,
+        100, 90, 50, 40,
+        10, 9, 5, 4,
+        1
+        ];
+    const syb = [
+        "M", "CM", "D", "CD",
+        "C", "XC", "L", "XL",
+        "X", "IX", "V", "IV",
+        "I"
+        ];
+    let romanNum = '';
+    for (let i = 0; i < val.length; i++) {
+        while (num >= val[i]) {
+            num -= val[i];
+            romanNum += syb[i];
+        }
+    }
+    return romanNum;
+}
+});
+
+** end of undefined **
+
+** start of undefined **
+
+input {
+        display: block;
+        margin: 10px auto;
+    }
+    button {
+        display: block;
+        margin: 10px auto;
+    }
+    #output {
+        font-size: 3em;
+        text-align: center;
+    }
+
+** end of undefined **
+
