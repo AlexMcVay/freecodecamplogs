@@ -1,0 +1,49 @@
+** start of undefined **
+
+<input id="user-input" type="text">
+<button id="check-btn">Check</button>
+<button id="clear-btn">Clear</button>
+<div id="results-div"></div>
+<script>
+  const userInput = document.getElementById("user-input");
+  const checkButton = document.getElementById("check-btn");
+  const clearButton = document.getElementById("clear-btn");
+  const resultsDiv = document.getElementById("results-div");
+
+  function checkPhoneNumber() {
+    const input = userInput.value;
+    if (!input) {
+      alert("Please provide a phone number");
+      return;
+    }
+    const regex = /^(\+?1\s?)?((\([0-9]{3}\)|[0-9]{3})(-|\s)?[0-9]{3}(-|\s)?[0-9]{4})$/;
+    const isValid = regex.test(input);
+    if (isValid) {
+      resultsDiv.textContent = `Valid US number: ${input}`;
+    } else {
+      resultsDiv.textContent = `Invalid US number: ${input}`;
+    }
+  }
+
+  checkButton.addEventListener("click", checkPhoneNumber);
+  clearButton.addEventListener("click", function() {
+    resultsDiv.textContent = "";
+  });
+</script>
+
+
+
+** end of undefined **
+
+** start of undefined **
+
+
+
+** end of undefined **
+
+** start of undefined **
+
+
+
+** end of undefined **
+
